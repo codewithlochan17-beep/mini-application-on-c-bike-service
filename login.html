@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>Login</title>
+<style>
+body{margin:0;height:100vh;display:flex;align-items:center;justify-content:center;background:#020617;font-family:Arial;color:white}
+.box{background:rgba(255,255,255,0.08);padding:30px;border-radius:20px;width:360px}
+input{width:100%;padding:12px;margin:10px 0;border:none;border-radius:10px;background:#111827;color:white}
+button{width:100%;padding:12px;border:none;border-radius:10px;background:linear-gradient(90deg,#38bdf8,#a855f7);color:white;font-weight:bold}
+</style>
+</head>
+<body>
+<div class='box'>
+<h2 style='text-align:center'>Service Login</h2>
+<form onsubmit='return loginCheck()'>
+<input type='text' id='user' placeholder='Username' required>
+<input type='email' id='mail' placeholder='Email' required>
+<input type='password' id='pass' placeholder='Password' required>
+<button type='submit'>Login</button>
+</form>
+<p style='font-size:12px;text-align:center'>admin | admin@gmail.com | 123456</p>
+</div>
+<script>
+function loginCheck(){
+  var u = document.getElementById('user').value.trim();
+  var e = document.getElementById('mail').value.trim();
+  var p = document.getElementById('pass').value.trim();
+  if(u === 'admin' && e === 'admin@gmail.com' && p === '123456'){
+    document.body.innerHTML = '<h1 style="text-align:center;margin-top:40vh;color:#22c55e">Login Successful ✅<br><small>Return to terminal and press ENTER</small></h1>';
+  } else {
+    alert('Invalid Credentials');
+  }
+  return false;
+}
+</script>
+</body>
+</html>
